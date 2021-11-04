@@ -24,8 +24,8 @@ class _ViewScreenState extends State<ViewScreen> {
   void initState() {
     super.initState();
     try {
-      creditsDetails = getPtsCodeDetails(widget.dep, widget.sem)[1];
-      codeDetais = getPtsCodeDetails(widget.dep, widget.sem)[0];
+      creditsDetails = getPtsCodeDetails(widget.dep, widget.sem)[0];
+      codeDetais = getPtsCodeDetails(widget.dep, widget.sem)[1];
       selectedValues = setSelectedValues(creditsDetails!.length);
       _hasElective = widget.sem == 'S5' || widget.sem == 'S6';
     } catch (e) {
@@ -37,6 +37,7 @@ class _ViewScreenState extends State<ViewScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var mediaQuerysize = MediaQuery.of(context).size;
     return _error.isNotEmpty
         ? Scaffold(
             body: Center(
@@ -79,8 +80,8 @@ class _ViewScreenState extends State<ViewScreen> {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: mediaQuerysize.height / 30,
                 ),
                 SizedBox(
                   child: Padding(
@@ -132,15 +133,15 @@ class _ViewScreenState extends State<ViewScreen> {
                   },
                   child: const Text('Calculate'),
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: mediaQuerysize.height / 30,
                 ),
                 Visibility(
                   visible: _hasElective,
                   child: Text(
                     '* ${widget.dep}${widget.sem} is Elective Subject',
                     style: TextStyle(
-                      color: Colors.grey[600],
+                      color: Colors.grey[700],
                     ),
                   ),
                 )
