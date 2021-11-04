@@ -1,6 +1,7 @@
 # cgpa
 
 A new Flutter project.
+# An app to calculate SGPA of polytechnic college, Revision 2015(course credits)
 
 ## Getting Started
 
