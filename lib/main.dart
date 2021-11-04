@@ -50,7 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Text("Department"),
                   const SizedBox(height: 3),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     child: DropdownButtonFormField(
                       value: depValue,
                       validator: (value) =>
@@ -76,7 +77,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Text("Semester"),
                   const SizedBox(height: 3),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                     child: DropdownButtonFormField<String>(
                       validator: (value) =>
                           value == null ? 'field required' : null,
